@@ -69,7 +69,7 @@ W czasie ćwiczenia próbowano oszacować grubość foli mylarowych przy pomocy 
 \section{Wstęp}
 Podczas ćwiczenia przygotowano próbki pomiarowe, następnie dokonano kalibracji układu przy pomocy pulsera i źródełka promieniowania $\alpha$. Następnie zmierzono energie cząstek $\alpha$ po przejściu przez próbki mylarowe. Korzystając z danych pomiarowych oraz wyników wygenerowanych przy pomocy programu SRIM, obliczono grubości folii.
 
-\subsection{Kalibracja}
+\section{Kalibracja}
 W celu kalibracji układu wykorzystano promieniowanie źródła \Ameryk oraz sygnał generowany przez pulser. Przy wykorzystaniu detektora krzemowego, mierzono kanał promieniowania $\alpha$. Podczas wszystkich pomiarów do detektora przyłożone było napięcie 55 V. Aby móc powiązać kanał z odpowiadającą mu energią cząstki $\alpha$, do kalibracji wykorzystano sygnał z puslera. Zmieniając napięcie  na pulserze, zmierzono zależność kanału od przyłożonego napięcia. Wykres przedstawiający zmierzone wartości przedstawiono na rysunku \ref{kalibracja}. Znając napięcie na pulserze odpowiadające danemu pikowi oraz numer kanału środka piku (dane umieszczone w tabeli \ref{kalibracja_tab}), oraz energię $\alpha$ emitowaną przez \Ameryk  (5.486 MeV) dopasowano funkcję pozwalającą obliczyć energię cząstki padającej na detektor znając jej numer kanału. Dopasowana funkcja, wraz z parametrami dopasowania znajduje się na wykresie \ref{dopasowanie_prostej}. Zdecydowano się na dopasowanie wielomianu drugiego stopnia, ponieważ daje dokładniejsze przewidywania (przy dopasowaniu funkcji liniowej dopasowana krzywa cyklicznie przewidywała zbyt małe i zbyt duże wartości co stwarzało podstawy do dodania kolejnego stopnia swobody). 
 
 \begin{table}[H]
@@ -112,7 +112,7 @@ Numer kanału        & Napięcie na pulserze {[}V{]}        & \multicolumn{1}{c|
 
 
 
-\subsection{Pomiar}
+\section{Pomiar}
 
 W celu zmierzenia grubości folii mylarowych, najpierw przygotowano próbki nalepiając kawałki folii na metalowe okienka. Najlepiej sprawdzająca się technika (szczególnie dla cienkich folii, mających tendencję do zwijania się) polegała na przyłożeniu metalowego okienka do arkuszu folii znajdującej się pomiędzy dwoma kartkami papieru a następnie przy pomocy skalpela odcięciu, po zewnętrznym obrysie okienka, potrzebnej ilości folii. Następnie odcięty kawałek należało przykleić do okienka. Tak przygotowane próbki umieszczano w komorze próżniowej i mierzono kanał padania cząstki $\alpha$ przechodzącej przez próbkę. Wyniki przykładowego pomiaru zamieszczono na rysunku  \ref{przykladowy_pomiar}.
 
@@ -127,8 +127,9 @@ W celu zmierzenia grubości folii mylarowych, najpierw przygotowano próbki nale
 \end{figure}
 
 
-\subsection{Analiza danych}
+\section{Analiza danych}
 Dla każdej próbki do zmierzonej zależności ilości zliczeń od kanału dopasowano krzywą Gaussa w celu określenia położenia maksimum piku. Korzystając z wyznaczonych podczas kalibracji parametrów można było przeliczyć numer kanału na energię cząstki $\alpha$ po przejściu przez daną próbkę. 
+
 Do wygenerowania danych potrzebnych do zamiany energii na grubość próbki skorzystano z programu SRIM \cite{srim}. W programie wygenerowano zależność energii cząstki $\alpha$ do zasięgu jaki powinna osiągnąć poruszając się w ośrodku złożonym z mylaru. Dane zostały ekstrapolowane do funkcji pozwalającej obliczyć przebytą odległość w zależności od energii końcowej cząstki $\alpha$. Energie po przejściu przez folie dla różnych próbek oraz odpowiadające im energię zamieszczono w tabeli \ref{wyniki}. 
 
 
@@ -155,10 +156,13 @@ H:           & 3.33807                      & 3.33807                         & 
 
 \section{Dyskusja wyników}
 Do wyznaczenia błędów pomiarowych wykorzystano standardową niepewność pomiaru wielkości złożonej uwzględniając niepewności dopasowania wielomianu podczas kalibracji oraz niepewność dopasowania krzywych Gaussa do danych pomiarowych. Dla tak otrzymanych błędów wyznaczenia energii cząstki po przejściu przez folie, obliczono odpowiadające im grubości. Wyniki plus-minus błąd zamieszczono w tabeli \ref{wyniki}. Jak można zauważyć, błąd ten jest niezwykle mały, około 6 rzędów wielkości mniejszy niż mierzone grubości.
+
 Kolejnym źródłem błędu mogły być dane wygenerowane przez program SRIM a dokładnie parametr "Bragg Correction" który, w zależności od wersji programu przyjmował różne wartości dla mylaru. Powtórzono całe obliczenia dla dwóch różnych wartości tej poprawki (równych odpowiednio 0,83\% i 0\%). Różnice w wynikach były 15 rzędów wielkości mniejsze niż mierzone wartości jest to więc poprawka całkowicie zaniedbywalna. 
 
 \section{Załączniki}
 W folderze załączniki znajdują się surowe dane pochodzące z pomiarów. Nazwy plików mają następującą formę: pliki zawierające dane pomiarowe zaczynają się od litery "m", kalibracyjne od litery "c". Następnie występuje data pomiaru w formacie dwie ostatnie cyfry roku, miesiąc, dzień. Ostatni znak identyfikuje mierzoną próbkę (próbki numerowane są literami alfabetu łacińskiego). Dane wstępnie obrobione zawierają w nazwie dopisek "\textunderscore obrobione" i zawierają dane w formacie "numer kanału" spacja "ilość zliczeń".
+
+Plik o nazwie "Helium in Mylar.txt" zawiera dane wygenerowane przy pomocy programu SRIM. 
 
 \begin{thebibliography}{9}
 \bibitem{srim} 
