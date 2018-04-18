@@ -72,6 +72,22 @@ Podczas ćwiczenia przygotowano próbki pomiarowe, następnie dokonano kalibracj
 \section{Kalibracja}
 W celu kalibracji układu wykorzystano promieniowanie źródła \Ameryk oraz sygnał generowany przez pulser. Przy wykorzystaniu detektora krzemowego, mierzono kanał promieniowania $\alpha$. Podczas wszystkich pomiarów do detektora przyłożone było napięcie 55 V. Aby móc powiązać kanał z odpowiadającą mu energią cząstki $\alpha$, do kalibracji wykorzystano sygnał z puslera. Zmieniając napięcie  na pulserze, zmierzono zależność kanału od przyłożonego napięcia. Wykres przedstawiający zmierzone wartości przedstawiono na rysunku \ref{kalibracja}. Znając napięcie na pulserze odpowiadające danemu pikowi oraz numer kanału środka piku (dane umieszczone w tabeli \ref{kalibracja_tab}), oraz energię $\alpha$ emitowaną przez \Ameryk  (5.486 MeV) dopasowano funkcję pozwalającą obliczyć energię cząstki padającej na detektor znając jej numer kanału. Dopasowana funkcja, wraz z parametrami dopasowania znajduje się na wykresie \ref{dopasowanie_prostej}. Zdecydowano się na dopasowanie wielomianu drugiego stopnia, ponieważ daje dokładniejsze przewidywania (przy dopasowaniu funkcji liniowej dopasowana krzywa cyklicznie przewidywała zbyt małe i zbyt duże wartości co stwarzało podstawy do dodania kolejnego stopnia swobody). 
 
+Ostatecznie energia cząstek $\alpha$ w funkcji kanału dana jest następującym wzorem:
+\[
+\label{wzorenergia}
+E(N)= \frac{b \cdot N+c \cdot N^2}{c \cdot  N_\alpha+c \cdot N_\alpha ^2 } \cdot E_\alpha\] 
+gdzie: 
+
+$E(N)$ - energia cząstki $\alpha$ w funkcji kanału, 
+
+ $b,c$ - parametry dopasowanego wielomianu drugiego stopnia, 
+ 
+ $N$ - numer kanału piku mierzonej cząstki $\alpha$, 
+ 
+ $N_\alpha$ - numer kanału piku swobodnej cząstki $\alpha$,
+ 
+  $E_\alpha$ - energia cząstki $\alpha$ (5485.56 $\pm$ 0.12 keV) emitowanej przez \Ameryk.
+
 \begin{table}[H]
 \centering
 \caption{Dane z pomiarów kalibracyjnych}
@@ -128,10 +144,16 @@ W celu zmierzenia grubości folii mylarowych, najpierw przygotowano próbki nale
 
 
 \section{Analiza danych}
-Dla każdej próbki do zmierzonej zależności ilości zliczeń od kanału dopasowano krzywą Gaussa w celu określenia położenia maksimum piku. Korzystając z wyznaczonych podczas kalibracji parametrów można było przeliczyć numer kanału na energię cząstki $\alpha$ po przejściu przez daną próbkę. 
+Dla każdej próbki do zmierzonej zależności ilości zliczeń od kanału dopasowano krzywą Gaussa w celu określenia położenia maksimum piku. Korzystając z wyznaczonych podczas kalibracji parametrów oraz ze wzoru \ref{wzorenergia} można było przeliczyć numer kanału na energię cząstki $\alpha$ po przejściu przez daną próbkę. 
 
-Do wygenerowania danych potrzebnych do zamiany energii na grubość próbki skorzystano z programu SRIM. W programie wygenerowano zależność energii cząstki $\alpha$ do zasięgu jaki powinna osiągnąć poruszając się w ośrodku złożonym z mylaru. Dane zostały ekstrapolowane do funkcji pozwalającej obliczyć przebytą odległość w zależności od energii końcowej cząstki $\alpha$. Energie po przejściu przez folie dla różnych próbek oraz odpowiadające im energię zamieszczono w tabeli \ref{wyniki}. 
+Do wygenerowania danych potrzebnych do zamiany energii na grubość próbki skorzystano z programu SRIM. W programie wygenerowano zależność energii cząstki $\alpha$ do zasięgu jaki powinna osiągnąć poruszając się w ośrodku złożonym z mylaru (opis pliku zawarty jest w sekcji "Załączniki"). Dane zostały ekstrapolowane do funkcji pozwalającej obliczyć przebytą odległość w zależności od energii końcowej cząstki $\alpha$. Rysunek \ref{energia_zasieg} przedstawia wykres ekstrapolowanej funkcji zasięgu cząstki $\alpha$ w mylarze od energii. Energie po przejściu przez folie dla różnych próbek oraz odpowiadające im energię zamieszczono w tabeli \ref{wyniki}. 
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.9]{energia_zasieg.pdf}
+\caption{Wykres zależności zasięgu cząstki $\alpha$ w mylarze od energii}
+\label{energia_zasieg}
+\end{figure}
 
 
 \begin{table}[H]
@@ -141,21 +163,22 @@ Do wygenerowania danych potrzebnych do zamiany energii na grubość próbki skor
 \begin{tabular}{|c|c|c|c|}
 \hline
 Numer próbki &\begin{tabular}[c]{@{}c@{}}Grubość próbki \\ {{[}$\mu m${]}}\end{tabular} & \begin{tabular}[c]{@{}c@{}} Grubość plus błąd \\ {{[}$\mu m${]}}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Grubość minus błąd \\ {{[}$\mu m${]} }\end{tabular} \\ \hline
-A:           & 3.54994                      & 3.54994                         & 3.54994                          \\ \hline
-B:           & 0.892657                     & 0.892657                        & 0.892656                         \\ \hline
-B2:          & 0.874075                     & 0.874076                        & 0.874075                         \\ \hline
-C:           & 1.76287                      & 1.76287                         & 1.76287                          \\ \hline
-D:           & 1.71342                      & 1.71342                         & 1.71342                          \\ \hline
-E:           & 4.8482                       & 4.8482                          & 4.8482                           \\ \hline
-F:           & 3.43638                      & 3.43639                         & 3.43638                          \\ \hline
-G:           & 3.28996                      & 3.28996                         & 3.28996                          \\ \hline
-H:           & 3.33807                      & 3.33807                         & 3.33807                          \\ \hline
+A:  &   3.55336   &   3.56133   &   3.5454   \\\hline    
+ B:  &   0.896443   &   0.904864   &   0.888022   \\\hline    
+ B2:  &   0.878149   &   0.885319   &   0.870979   \\\hline    
+ C:  &   1.76654   &   1.77285   &   1.76022   \\\hline    
+ D:  &   1.71737   &   1.728   &   1.70675   \\\hline    
+ E:  &   4.85145   &   4.86244   &   4.84047   \\\hline    
+ A:  &   3.44009   &   3.45163   &   3.42854   \\\hline    
+ G:  &   3.29369   &   3.30501   &   3.28236   \\\hline    
+ H:  &   3.34179   &   3.35322   &   3.33035   \\\hline    
+
 \end{tabular}
 \end{table}
 
 
 \section{Dyskusja wyników}
-Do wyznaczenia błędów pomiarowych wykorzystano standardową niepewność pomiaru wielkości złożonej uwzględniając niepewności dopasowania wielomianu podczas kalibracji oraz niepewność dopasowania krzywych Gaussa do danych pomiarowych. Dla tak otrzymanych błędów wyznaczenia energii cząstki po przejściu przez folie, obliczono odpowiadające im grubości. Wyniki plus-minus błąd zamieszczono w tabeli \ref{wyniki}. Jak można zauważyć, błąd ten jest niezwykle mały, około 6 rzędów wielkości mniejszy niż mierzone grubości.
+Do wyznaczenia błędów pomiarowych wykorzystano standardową niepewność pomiaru wielkości złożonej uwzględniając niepewności dopasowania wielomianu podczas kalibracji, błąd znajomości energii swobodnej cząstki $\alpha$ oraz niepewność dopasowania krzywych Gaussa do danych pomiarowych (zarówno niepewność oszacowania pomiaru piku swobodnej cząstki $\alpha$ jak i niepewność dla każdej próbki). Dla tak otrzymanych błędów wyznaczenia energii cząstki po przejściu przez folie, obliczono odpowiadające im grubości. Wyniki plus-minus błąd zamieszczono w tabeli \ref{wyniki}. Jak można zauważyć, błąd ten oscyluje w granicy 1\% grubości dla wszystkich mierzonych próbek.
 
 Kolejnym źródłem błędu mogły być dane wygenerowane przez program SRIM a dokładnie parametr ,,Bragg Correction'' który, w zależności od wersji programu przyjmował różne wartości dla mylaru. Powtórzono całe obliczenia dla dwóch różnych wartości tej poprawki (równych odpowiednio 0,83\% i 0\%). Różnice w wynikach były 15 rzędów wielkości mniejsze niż mierzone wartości jest to więc poprawka całkowicie zaniedbywalna. 
 
