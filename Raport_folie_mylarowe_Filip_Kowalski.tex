@@ -26,7 +26,7 @@
     \begin{center}\small
     Uniwersytet Warszawski\\
     Wydział Fizyki\\
-   Raport z Indywidualnej pracay w laboratorium badawczym
+   Raport z Indywidualnej pracy w laboratorium badawczym
     \end{center}
     
 \begin{figure}[h]
@@ -58,7 +58,7 @@
     
 \makeatother
 \author{Filip Kowalski }
-\title{Pomiar grubości foli mylarowych przy pomocy promieniowania $\alpha$} 
+\title{Pomiar grubości folii mylarowych przy pomocy promieniowania $\alpha$} 
 
 %pzc
 \begin{document}
@@ -75,7 +75,7 @@ W celu kalibracji układu wykorzystano promieniowanie źródła \Ameryk oraz syg
 Ostatecznie energia cząstek $\alpha$ w funkcji kanału dana jest następującym wzorem:
 \[
 \label{wzorenergia}
-E(N)= \frac{b \cdot N+c \cdot N^2}{c \cdot  N_\alpha+c \cdot N_\alpha ^2 } \cdot E_\alpha\] 
+E(N)= \frac{b \cdot N+c \cdot N^2}{b \cdot  N_\alpha+c \cdot N_\alpha ^2 } \cdot E_\alpha\] 
 gdzie: 
 
 $E(N)$ - energia cząstki $\alpha$ w funkcji kanału, 
@@ -146,7 +146,28 @@ W celu zmierzenia grubości folii mylarowych, najpierw przygotowano próbki nale
 \section{Analiza danych}
 Dla każdej próbki do zmierzonej zależności ilości zliczeń od kanału dopasowano krzywą Gaussa w celu określenia położenia maksimum piku. Korzystając z wyznaczonych podczas kalibracji parametrów oraz ze wzoru \ref{wzorenergia} można było przeliczyć numer kanału na energię cząstki $\alpha$ po przejściu przez daną próbkę. 
 
-Do wygenerowania danych potrzebnych do zamiany energii na grubość próbki skorzystano z programu SRIM. W programie wygenerowano zależność energii cząstki $\alpha$ do zasięgu jaki powinna osiągnąć poruszając się w ośrodku złożonym z mylaru (opis pliku zawarty jest w sekcji "Załączniki"). Dane zostały ekstrapolowane do funkcji pozwalającej obliczyć przebytą odległość w zależności od energii końcowej cząstki $\alpha$. Rysunek \ref{energia_zasieg} przedstawia wykres ekstrapolowanej funkcji zasięgu cząstki $\alpha$ w mylarze od energii. Energie po przejściu przez folie dla różnych próbek oraz odpowiadające im energię zamieszczono w tabeli \ref{wyniki}. 
+Do wygenerowania danych potrzebnych do zamiany energii na grubość próbki skorzystano z programu SRIM. W programie wygenerowano zależność energii cząstki $\alpha$ do zasięgu jaki powinna osiągnąć poruszając się w ośrodku złożonym z mylaru (opis pliku zawarty jest w sekcji ,,Załączniki''). Dane zostały interpolowane  do funkcji pozwalającej obliczyć przebytą odległość w zależności od energii cząstki $\alpha$. 
+
+Do obliczenia grubości folii w zależności od energii cząstki $\alpha$  po przejściu przez folię mylarową skorzystano z następującego wzoru:    
+
+\[d = R(E_0)-R(E_f)\]
+
+gdzie:
+
+$d$ - grubość próbki
+
+$R(E)$ - interpolowana funkcja zasięgu cząstki $\alpha$ w mylarze od jej  energii $E$
+
+$E_0$ - energia cząstki $\alpha$ emitowanej przez \Ameryk
+
+$E_f$ - zmierzona wartość energii cząstki $\alpha$ po przejściu przez próbkę
+\\
+
+
+Do obliczenia grubości folii skorzystano z faktu, że różnica zasięgów przed przejściem przez próbkę i po przejściu jest równa grubości próbki.
+
+
+Rysunek \ref{energia_zasieg} przedstawia wykres interpolowanej funkcji zasięgu cząstki $\alpha$ w mylarze od energii. Energie po przejściu przez folie dla różnych próbek oraz odpowiadające im energię zamieszczono w tabeli \ref{wyniki}. 
 
 \begin{figure}[H]
 \centering
@@ -158,20 +179,21 @@ Do wygenerowania danych potrzebnych do zamiany energii na grubość próbki skor
 
 \begin{table}[H]
 \centering
-\caption{Wyznaczone grubości próbek}
+\caption{Zmierzone energie oraz obliczone grubości}
 \label{wyniki}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-Numer próbki &\begin{tabular}[c]{@{}c@{}}Grubość próbki \\ {{[}$\mu m${]}}\end{tabular} & \begin{tabular}[c]{@{}c@{}} Grubość plus błąd \\ {{[}$\mu m${]}}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Grubość minus błąd \\ {{[}$\mu m${]} }\end{tabular} \\ \hline
-A:  &   3.55336   &   3.56133   &   3.5454   \\\hline    
- B:  &   0.896443   &   0.904864   &   0.888022   \\\hline    
- B2:  &   0.878149   &   0.885319   &   0.870979   \\\hline    
- C:  &   1.76654   &   1.77285   &   1.76022   \\\hline    
- D:  &   1.71737   &   1.728   &   1.70675   \\\hline    
- E:  &   4.85145   &   4.86244   &   4.84047   \\\hline    
- A:  &   3.44009   &   3.45163   &   3.42854   \\\hline    
- G:  &   3.29369   &   3.30501   &   3.28236   \\\hline    
- H:  &   3.34179   &   3.35322   &   3.33035   \\\hline    
+\begin{tabular}[c]{@{}c@{}}Numer  \\ {{próbki}}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Numer \\ {{kanału}}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Energia po przejściu \\ {{ przez próbkę [}Mev{]}}\end{tabular}&\begin{tabular}[c]{@{}c@{}}Grubość  \\ {{próbki[}$\mu m${]}}\end{tabular} & \begin{tabular}[c]{@{}c@{}} Grubość plus  \\ {{błąd[}$\mu m${]}}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Grubość minus  \\ {{błąd [}$\mu m${]} }\end{tabular} \\ \hline
+
+A:  &   2433  &  5080  &  3.553   &   3.561   &   3.545   \\\hline    
+ B:  &   2579  &  5386  &  0.896   &   0.905   &   0.888   \\\hline    
+ B2:  &   2579  &  5388  &  0.878   &   0.885   &   0.871   \\\hline    
+ C:  &   2532 &  5287  &  1.767   &   1.773   &   1.760   \\\hline    
+ D:  &   2533  &  5293  &  1.717   &   1.728   &   1.707   \\\hline    
+ E:  &   2359  &  4926  &  4.851   &   4.862   &   4.840   \\\hline    
+ A:  &   2438  &  5094  &  3.440   &   3.452   &   3.429   \\\hline    
+ G:  &   2446  &  5111  &  3.294   &   3.305   &   3.282   \\\hline    
+ H:  &   2443 &  5105  &  3.342   &   3.353   &   3.330   \\\hline      
 
 \end{tabular}
 \end{table}
