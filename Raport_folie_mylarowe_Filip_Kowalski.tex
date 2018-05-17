@@ -69,6 +69,17 @@ W czasie ćwiczenia próbowano oszacować grubość foli mylarowych przy pomocy 
 \section{Wstęp}
 Podczas ćwiczenia przygotowano próbki pomiarowe, następnie dokonano kalibracji układu przy pomocy pulsera i źródełka promieniowania $\alpha$. Następnie zmierzono energie cząstek $\alpha$ po przejściu przez próbki mylarowe. Korzystając z danych pomiarowych oraz wyników wygenerowanych przy pomocy programu SRIM \cite{srim}, obliczono grubości folii.
 
+\section{Układ pomiarowy}
+Układ pomiarowy składał się z źródła \Ameryk, foli mylarowej oraz detektora krzemowego. Cały układ był zamknięty w komorze próżniowej. Próbki folii mylarowych znajdowały się w okienkach umieszczonych w uchwycie umożliwiającym zmianę aktualnie mierzonej próbki bez konieczności rozszczelnienia komory próżniowej co pozwoliło znaczenie przyśpieszyć pomiary. 
+Cząstki $\alpha$ pochodzące ze źródła przechodziły przez próbkę (lub w wypadku pomiaru kalibracyjnego przez puste okienko) a następnie padały na detektor krzemowy który rejestrował zliczenia w funkcji kanału. Schemat układu pomiarowego znajduje się na rysunku 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{schemat.png}
+\caption{Schemat układu pomiarowego}
+\label{kalibracja}
+\end{figure}
+
 \section{Kalibracja}
 W celu kalibracji układu wykorzystano promieniowanie źródła \Ameryk oraz sygnał generowany przez pulser. Przy wykorzystaniu detektora krzemowego, mierzono kanał promieniowania $\alpha$. Podczas wszystkich pomiarów do detektora przyłożone było napięcie 55 V. Aby móc powiązać kanał z odpowiadającą mu energią cząstki $\alpha$, do kalibracji wykorzystano sygnał z puslera. Zmieniając napięcie  na pulserze, zmierzono zależność kanału od przyłożonego napięcia. Wykres przedstawiający zmierzone wartości przedstawiono na rysunku \ref{kalibracja}. Znając napięcie na pulserze odpowiadające danemu pikowi oraz numer kanału środka piku (dane umieszczone w tabeli \ref{kalibracja_tab}), oraz energię $\alpha$ emitowaną przez \Ameryk  (5.486 MeV) dopasowano funkcję pozwalającą obliczyć energię cząstki padającej na detektor znając jej numer kanału. Dopasowana funkcja, wraz z parametrami dopasowania znajduje się na wykresie \ref{dopasowanie_prostej}. Zdecydowano się na dopasowanie wielomianu drugiego stopnia, ponieważ daje dokładniejsze przewidywania (przy dopasowaniu funkcji liniowej dopasowana krzywa cyklicznie przewidywała zbyt małe i zbyt duże wartości co stwarzało podstawy do dodania kolejnego stopnia swobody). 
 
